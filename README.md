@@ -1,0 +1,1 @@
+# CP-CLAP-Compact-Language-Audio-Alignment-for-Efficient-Knowledge-Transfer
