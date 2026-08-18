@@ -481,3 +481,27 @@ The final distilled student reaches:
 | **UrbanSound8K** | **97.4% accuracy** | **31.2K** |
 
 The result is a practical path for transferring the semantic strength of audio–language models into extremely compact audio classifiers without carrying multimodal inference cost into deployment.
+
+---
+
+# Code Structure
+
+The repository is organized to keep the **CP-CLAP model**, **training pipeline**, **knowledge distillation**, and shared audio-processing utilities clearly separated.
+
+```text
+CP-Clap/
+├── checkpoints/          # Model checkpoint placeholders
+├── distillation/         # Knowledge-distillation utilities and losses
+├── evaluation/           # Evaluation and metric helpers
+├── models/               # CP-CLAP and supporting model definitions
+├── training/             # CP-CLAP and student training logic
+│
+├── __init__.py           # Package initialization
+├── api.py                # High-level package interface
+├── augmentations.py      # Audio augmentation utilities
+├── batches.py            # Batch preparation and data helpers
+├── checkpoints.py        # Checkpoint loading and saving utilities
+├── config.py             # Shared configuration and hyperparameters
+├── external.py           # External model and component integration
+├── spectrum.py           # Spectrogram and audio feature processing
+└── CPCLAP_STRUCTURE.txt  # Additional notes about the package layout
