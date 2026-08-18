@@ -1,0 +1,22 @@
+CP-CLAP additions
+=================
+
+models/teachers/cp_clap/
+    __init__.py
+    audio_encoder.py    - CP-Mobile adapted to a CLAP embedding head
+    config.py           - paper-level model configuration + placeholders
+    metadata.py         - checkpoint/size placeholders
+    model.py            - CP-CLAP model and text-side integration
+    prompts.py          - four-prompt class template utilities
+
+training/cp_clap/
+    __init__.py
+    config.py           - alpha=0.5, beta=0.5 and reported shared training settings
+    losses.py           - L_cpcl, L_a2t, L_t2a, L_cls formulation
+    trainer.py          - reference train/evaluation orchestration
+
+checkpoints/cp_clap/
+    __init__.py         - user-fillable checkpoint placeholders
+
+The original shared package files are left unchanged.  CP-CLAP can be treated as
+an external teacher because CPCLAPTeacher.forward() returns class logits.
